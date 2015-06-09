@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\Pelaajav1.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\Pelaajav1.xnb</Output>
       <Time>2015-06-06T01:15:13.2742294+03:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\verilantti.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\verilantti.xnb</Output>
       <Time>2015-06-06T01:15:13.3142317+03:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\pistooli.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\pistooli.xnb</Output>
       <Time>2015-06-06T01:15:13.3092314+03:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\mp5.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\mp5.xnb</Output>
       <Time>2015-06-06T01:15:13.2972308+03:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\Shotgun.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\Shotgun.xnb</Output>
       <Time>2015-06-06T01:15:13.2802298+03:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\kalashnikov.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\kalashnikov.xnb</Output>
       <Time>2015-06-06T01:15:13.2852301+03:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\pelaajawithkalashnikov.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\pelaajawithkalashnikov.xnb</Output>
       <Time>2015-06-06T01:15:13.3032311+03:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextFileImporter</Importer>
       <Processor>TextFileContentProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\kentta.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\kentta.xnb</Output>
       <Time>2015-06-06T01:15:13.2912304+03:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\aksound.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\aksound.xnb</Output>
       <Time>2015-06-07T02:38:38.6396084+03:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\mp5sound.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\mp5sound.xnb</Output>
       <Time>2015-06-07T01:50:51.7676327+03:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\m3sound.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\m3sound.xnb</Output>
       <Time>2015-06-07T02:04:29.0153766+03:00</Time>
     </Item>
     <Item>
@@ -106,7 +106,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\vaihto.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\vaihto.xnb</Output>
       <Time>2015-06-07T02:42:34.2700857+03:00</Time>
     </Item>
     <Item>
@@ -115,7 +115,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\m3vaihto.xnb</Output>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\m3vaihto.xnb</Output>
       <Time>2015-06-07T02:44:01.2160587+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -125,10 +125,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShotContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShotContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

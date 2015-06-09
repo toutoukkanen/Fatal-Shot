@@ -13,6 +13,8 @@ public class HotlineVihti : PhysicsGame
 
     IntMeter haulit;
 
+    Timer hauliajastin;
+
     //SoundEffect kalashnikovsound = LoadSoundEffect("kalashnikovsound");
 
     SoundEffect aksound = LoadSoundEffect ("aksound");
@@ -96,14 +98,7 @@ public class HotlineVihti : PhysicsGame
 
         haulit = new IntMeter(56);
 
-        Timer hauliajastin = new Timer();
-        hauliajastin.Interval = 0.9;
-        hauliajastin.Timeout += delegate()
-        {
-            haulikkovalmiina = true;
-        };
 
-        hauliajastin.Start();
 
         rekyylitimer.Interval = 0.1;
         rekyylitimer.Timeout += rekyyli; 
@@ -286,6 +281,7 @@ public class HotlineVihti : PhysicsGame
         if (haulikkovalmiina && pelikaynnissa && haulit.Value > 7 && pelaajan1Ase.IsAddedToGame)
         {
             m3sound.Play();
+            hauliajastin.Start();
             for (int i = 0; i < 9; i++)
             {
 
@@ -413,6 +409,17 @@ public class HotlineVihti : PhysicsGame
         ase.Destroy();
 
         haulikkovalmiina = false;
+
+        hauliajastin = new Timer();
+        hauliajastin.Interval = 0.9;
+        hauliajastin.Timeout += delegate()
+        {
+            haulikkovalmiina = true;
+        };
+
+
+        hauliajastin.Start();
+
         pelikaynnissa = true;
     }
 

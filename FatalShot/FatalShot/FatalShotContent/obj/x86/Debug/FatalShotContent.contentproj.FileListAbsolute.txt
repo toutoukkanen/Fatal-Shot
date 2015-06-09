@@ -1,2 +1,3 @@
 C:\Users\Toukka\Desktop\HotlineVihti\FatalShot\FatalShotContent\obj\x86\Debug\FatalShotContent.contentprojResolveAssemblyReference.cache
 C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShotContent\obj\x86\Debug\FatalShotContent.contentprojResolveAssemblyReference.cache
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShotContent\obj\x86\Debug\FatalShotContent.contentprojResolveAssemblyReference.cache

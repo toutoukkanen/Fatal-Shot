@@ -35,3 +35,24 @@ C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\Fat
 C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\m3sound.xnb
 C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\vaihto.xnb
 C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Debug\Content\m3vaihto.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\Pelaajav1.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\verilantti.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\pistooli.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\mp5.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\Shotgun.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\kalashnikov.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\pelaajawithkalashnikov.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\kentta.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\aksound.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\mp5sound.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\m3sound.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\vaihto.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\m3vaihto.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\FatalShot.exe
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\FatalShot.pdb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Jypeli.dll
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Jypeli.xml
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\FatalShot.csprojResolveAssemblyReference.cache
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\FatalShot.exe
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\FatalShot.pdb
