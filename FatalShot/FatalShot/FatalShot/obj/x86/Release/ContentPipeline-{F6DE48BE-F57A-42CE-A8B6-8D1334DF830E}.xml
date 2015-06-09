@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Pelaajav1.png</Source>
+      <Name>Pelaajav1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\Pelaajav1.xnb</Output>
+      <Time>2015-06-06T01:15:13.2742294+03:00</Time>
+    </Item>
+    <Item>
+      <Source>verilantti.png</Source>
+      <Name>verilantti</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\verilantti.xnb</Output>
+      <Time>2015-06-06T01:15:13.3142317+03:00</Time>
+    </Item>
+    <Item>
+      <Source>pistooli.png</Source>
+      <Name>pistooli</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\pistooli.xnb</Output>
+      <Time>2015-06-06T01:15:13.3092314+03:00</Time>
+    </Item>
+    <Item>
+      <Source>mp5.png</Source>
+      <Name>mp5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\mp5.xnb</Output>
+      <Time>2015-06-06T01:15:13.2972308+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Shotgun.png</Source>
+      <Name>Shotgun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\Shotgun.xnb</Output>
+      <Time>2015-06-06T01:15:13.2802298+03:00</Time>
+    </Item>
+    <Item>
+      <Source>kalashnikov.png</Source>
+      <Name>kalashnikov</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\kalashnikov.xnb</Output>
+      <Time>2015-06-06T01:15:13.2852301+03:00</Time>
+    </Item>
+    <Item>
+      <Source>pelaajawithkalashnikov.png</Source>
+      <Name>pelaajawithkalashnikov</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\pelaajawithkalashnikov.xnb</Output>
+      <Time>2015-06-06T01:15:13.3032311+03:00</Time>
+    </Item>
+    <Item>
+      <Source>kentta.txt</Source>
+      <Name>kentta</Name>
+      <Importer>TextFileImporter</Importer>
+      <Processor>TextFileContentProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\kentta.xnb</Output>
+      <Time>2015-06-06T01:15:13.2912304+03:00</Time>
+    </Item>
+    <Item>
+      <Source>aksound.wav</Source>
+      <Name>aksound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\aksound.xnb</Output>
+      <Time>2015-06-07T02:38:38.6396084+03:00</Time>
+    </Item>
+    <Item>
+      <Source>mp5sound.wav</Source>
+      <Name>mp5sound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\mp5sound.xnb</Output>
+      <Time>2015-06-07T01:50:51.7676327+03:00</Time>
+    </Item>
+    <Item>
+      <Source>m3sound.wav</Source>
+      <Name>m3sound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\m3sound.xnb</Output>
+      <Time>2015-06-07T02:04:29.0153766+03:00</Time>
+    </Item>
+    <Item>
+      <Source>vaihto.wav</Source>
+      <Name>vaihto</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\vaihto.xnb</Output>
+      <Time>2015-06-07T02:42:34.2700857+03:00</Time>
+    </Item>
+    <Item>
+      <Source>m3vaihto.wav</Source>
+      <Name>m3vaihto</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\m3vaihto.xnb</Output>
+      <Time>2015-06-07T02:44:01.2160587+03:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{F6DE48BE-F57A-42CE-A8B6-8D1334DF830E}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShotContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Toukka\Documents\Visual Studio 2013\Projects\HotlineVihti\FatalShot\FatalShot\bin\x86\Release\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>F:\Program Files (x86)\Jypeli\lib\ContentExtensions\TextFileContentExtension.dll</Key>
+        <Value>2015-04-01T18:41:16+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>F:\Program Files (x86)\Jypeli\lib\ContentExtensions\AnimationExtension.dll</Key>
+        <Value>2015-04-01T18:41:16+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-06-06T01:25:01.6108804+03:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

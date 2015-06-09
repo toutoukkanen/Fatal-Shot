@@ -1,0 +1,13 @@
+Content\Pelaajav1.xnb
+Content\verilantti.xnb
+Content\pistooli.xnb
+Content\mp5.xnb
+Content\Shotgun.xnb
+Content\kalashnikov.xnb
+Content\pelaajawithkalashnikov.xnb
+Content\kentta.xnb
+Content\aksound.xnb
+Content\mp5sound.xnb
+Content\m3sound.xnb
+Content\vaihto.xnb
+Content\m3vaihto.xnb
