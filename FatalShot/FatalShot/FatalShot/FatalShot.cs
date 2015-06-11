@@ -483,27 +483,50 @@ public class HotlineVihti : PhysicsGame
 
         AddCollisionHandler(pahis, seinatormays);
 
-        pahis.Brain = seuraajaAivot;
         seuraajaAivot.Active = true;
         seuraajaAivot.Speed = 500;
         seuraajaAivot.DistanceClose = 150;
         seuraajaAivot.DistanceFar = 250;
+        seuraajaAivot.StopWhenTargetClose = true;
 
         randomAivot.Speed = 500;
 
         LabyrinthWandererBrain labyrinttiAivot = new LabyrinthWandererBrain(ruudunKoko);
         labyrinttiAivot.Speed = 100.0;
         labyrinttiAivot.LabyrinthWallTag = "seina";
+        labyrinttiAivot.DirectionChangeTimeout = 1;
+        
+        
+
+        pahis.Brain = seuraajaAivot;
+        
 
         seuraajaAivot.FarBrain = labyrinttiAivot;
 
-        seuraajaAivot.TargetClose += delegate { if (pahis.SeesObject(pelaaja1)) { pahisAmpuu(pahisAse, pahis); } else { } };
+        Timer aivoajastin = new Timer();
+        aivoajastin.Interval = 0.5;
+        aivoajastin.Timeout += delegate()
+        {
+            if (pahis.SeesObject(pelaaja1))
+            pahis.Brain = seuraajaAivot;
+            else
+            {
+                aivoajastin.Start();
+            }
+          
+        };
 
-        seuraajaAivot.StopWhenTargetClose = true;
+        seuraajaAivot.TargetClose += delegate { if (pahis.SeesObject(pelaaja1)) { pahisAmpuu(pahisAse, pahis); } else { pahis.Brain = labyrinttiAivot; aivoajastin.Start(); } };
+
         pahis.CollisionIgnoreGroup = 1;
 
         Add(pahis);
 
+    }
+
+    void updateAi()
+    {
+        
     }
 
     void seinatormays(PhysicsObject pahis, PhysicsObject kohde)
@@ -607,14 +630,14 @@ public class HotlineVihti : PhysicsGame
 
             //LisaaAseTrigger(kohde.Position, ruudunKoko, ruudunKoko, "ase3", mp5);
 
-            Explosion rajahdys = new Explosion(5000);
-            rajahdys.Image = veriLantti;
-            rajahdys.MaxRadius = 70;
-            rajahdys.Force = 100;
-            rajahdys.Speed = 100;
-            rajahdys.Position = kohde.Position + new Vector(3, 0);
-            rajahdys.ShockwaveColor = new Color(10, 0, 0, 0);
-            Add(rajahdys);
+            //Explosion rajahdys = new Explosion(5000);
+            //rajahdys.Image = veriLantti;
+            //rajahdys.MaxRadius = 70;
+            //rajahdys.Force = 100;
+            //rajahdys.Speed = 100;
+            //rajahdys.Position = kohde.Position + new Vector(3, 0);
+            //rajahdys.ShockwaveColor = new Color(10, 0, 0, 0);
+            //Add(rajahdys);
 
             GameObject verilantti = new GameObject(30, 30);
             verilantti.Position = kohde.Position;
