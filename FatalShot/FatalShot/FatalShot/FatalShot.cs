@@ -71,7 +71,7 @@ public class HotlineVihti : PhysicsGame
         kentta2.SetTileMethod('!', luoPahis2);
         kentta2.SetTileMethod('H', VaihdaAse);
         kentta2.SetTileMethod('/', VaihdaAse2);
-        kentta2.SetTileMethod('¤', VaihdaAse3);
+        kentta2.SetTileMethod('"', VaihdaAse3);
         kentta2.Execute(ruudunKoko, ruudunKoko);
 
         Mouse.Listen(MouseButton.Left, ButtonState.Down, Ammu, "Ammu", pelaajan1Ase);
@@ -266,9 +266,9 @@ public class HotlineVihti : PhysicsGame
             if (ammus != null)
             {
                 ammus.CollisionIgnoreGroup = 3;
-                ase3.Power.DefaultValue = 450;
+                ase3.Power.DefaultValue = 300;
                 ase3.FireRate = 10;
-                ammus.Size *= 0.45;
+                ammus.Size *= 0.50;
             }
         }
     }
@@ -283,7 +283,6 @@ public class HotlineVihti : PhysicsGame
             hauliajastin.Start();
             for (int i = 0; i < 9; i++)
             {
-
                 PhysicsObject hauli = new PhysicsObject(2, 2);
                 hauli.Shape = Shape.Ellipse;
                 hauli.Color = Color.Yellow;
@@ -293,7 +292,7 @@ public class HotlineVihti : PhysicsGame
                 //hauli.Angle = RandomGen.NextAngle(Angle.FromDegrees(-45), Angle.FromDegrees(45));
                 Add(hauli);
 
-                hauli.MaximumLifetime = TimeSpan.FromSeconds(0.3);
+                hauli.MaximumLifetime = TimeSpan.FromSeconds(0.5);
                 AddCollisionHandler(hauli, "paha", AmmusOsui2);
                 AddCollisionHandler(hauli, "seina", CollisionHandler.DestroyObject);
 
@@ -321,7 +320,7 @@ public class HotlineVihti : PhysicsGame
 
             if (ammus != null)
             {
-                ase2.Power.DefaultValue = 250;
+                ase2.Power.DefaultValue = 300;
                 ase2.FireRate = 7;
                 ammus.Size *= 0.65;
                 ammus.CollisionIgnoreGroup = 3;
@@ -430,6 +429,8 @@ public class HotlineVihti : PhysicsGame
 
         pelaaja1.Add(pelaajan1Ase2);
 
+        pelikaynnissa = false;
+
         pelaajan1Ase2.Ammo.Value = ammokalashnikov;
 
         vaihto.Play();
@@ -471,16 +472,15 @@ public class HotlineVihti : PhysicsGame
         AssaultRifle pahisAse2 = new AssaultRifle(30, 10);
         pahisAse2.Ammo.Value = 100;
         pahisAse2.ProjectileCollision = PahisAmmusOsui2;
-        pahis.Ase = pahisAse2;
+        pahis.pahisAse2 = pahisAse2;
         pahis.Tag = "paha";
         pahisAse2.AttackSound = null;
         pahisAse2.Image = kalashnikov;
-        pahis.Ase2 = pahisAse2;
         pahis.Add(pahisAse2);
         AddCollisionHandler(pahis, seinatormays);
         seuraajaAivot.Active = true;
         seuraajaAivot.Speed = 500;
-        seuraajaAivot.DistanceClose = 150;
+        seuraajaAivot.DistanceClose = 200;
         seuraajaAivot.DistanceFar = 250;
         seuraajaAivot.StopWhenTargetClose = true;
         randomAivot.Speed = 500;
@@ -526,7 +526,7 @@ public class HotlineVihti : PhysicsGame
         pahisAse.Ammo.Value = 100;
         pahisAse.ProjectileCollision = PahisAmmusOsui2;
         pahisAse.InfiniteAmmo = true;
-        pahis.Ase = pahisAse;
+        pahis.pahisAse = pahisAse;
         pahis.Tag = "paha";
         pahisAse.AttackSound = null;
         pahisAse.Image = mp5;
@@ -536,7 +536,7 @@ public class HotlineVihti : PhysicsGame
 
         seuraajaAivot.Active = true;
         seuraajaAivot.Speed = 500;
-        seuraajaAivot.DistanceClose = 150;
+        seuraajaAivot.DistanceClose = 200;
         seuraajaAivot.DistanceFar = 250;
         seuraajaAivot.StopWhenTargetClose = true;
 

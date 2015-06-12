@@ -12,29 +12,29 @@ using Jypeli.Widgets;
         private IntMeter elamaLaskuri = new IntMeter(3, 0, 3);
         public IntMeter ElamaLaskuri { get { return elamaLaskuri; } }
 
-        private AssaultRifle ase = new AssaultRifle(10, 10);
-        public AssaultRifle Ase
+        private AssaultRifle pahisase = new AssaultRifle(10, 10);
+        public AssaultRifle pahisAse
         {
             get 
-            { 
-                return ase; 
+            {
+                return pahisase; 
             }
             set
             {
-                ase = value;
+                pahisase = value;
             }
         }
 
-        private AssaultRifle ase2 = new AssaultRifle(10, 10);
-        public AssaultRifle Ase2
+        private AssaultRifle pahisase2 = new AssaultRifle(10, 10);
+        public AssaultRifle pahisAse2
         {
             get
             {
-                return ase2;
+                return pahisase2;
             }
             set
             {
-                ase2 = value;
+                pahisase2 = value;
             }
         }
 
@@ -58,11 +58,11 @@ using Jypeli.Widgets;
             PhysicsObject asetrigger = PhysicsObject.CreateStaticObject(20, 20);
             asetrigger.CollisionIgnoreGroup = 0;
             asetrigger.IgnoresCollisionResponse = true;
-            if (this.ase.IsAddedToGame)
+            if (this.pahisAse.IsAddedToGame)
             {
                 asetrigger.Tag = "ase3";
             }
-            if (this.ase2.IsAddedToGame)
+            else if (this.pahisAse2.IsAddedToGame)
             {
                 asetrigger.Tag = "ase2";
             }
@@ -70,7 +70,8 @@ using Jypeli.Widgets;
             asetrigger.Image = aseenkuva;
             Game.Add(asetrigger,1);
 
-            this.Ase.Destroy();
+            //this.Ase.Destroy();
+            //this.Ase2.Destroy();
             this.Destroy();
         }
 
