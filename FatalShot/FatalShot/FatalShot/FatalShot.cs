@@ -68,6 +68,7 @@ public class HotlineVihti : PhysicsGame
 
         TileMap kentta2 = TileMap.FromLevelAsset("kentta");
         kentta2.SetTileMethod('&', luoPahis);
+        kentta2.SetTileMethod('!', luoPahis2);
         kentta2.SetTileMethod('H', VaihdaAse);
         kentta2.SetTileMethod('/', VaihdaAse2);
         kentta2.SetTileMethod('¤', VaihdaAse3);
@@ -222,10 +223,7 @@ public class HotlineVihti : PhysicsGame
         asetrigger.Tag = tagiNimi;
         asetrigger.Position = paikka;
         asetrigger.Image = kuva;
-        Add(asetrigger, -3);
-
-
-       
+        Add(asetrigger, -3);       
     }
 
     void aloitaAlusta()
@@ -233,6 +231,7 @@ public class HotlineVihti : PhysicsGame
         pelikaynnissa = true;
         ClearAll();
         Begin();
+        rekyyliOn = true;
         
         //vaihdettujo = false;
     }
@@ -460,6 +459,57 @@ public class HotlineVihti : PhysicsGame
         Mouse.ListenMovement(0.1, Tahtaa, "Tähtää");
     }
 
+    void luoPahis2(Vector paikka, double leveys, double korkeus)
+    {
+        Pahis pahis = new Pahis(leveys * 0.6, korkeus * 0.6, veriLantti, kalashnikov);
+        pahis.Position = paikka;
+        pahis.Image = pelaajanKuva;
+        pahis.Shape = Shape.Octagon;
+        FollowerBrain seuraajaAivot = new FollowerBrain(pelaaja1);
+        RandomMoverBrain randomAivot = new RandomMoverBrain();
+        randomAivot.ChangeMovementSeconds = 3;
+        AssaultRifle pahisAse2 = new AssaultRifle(30, 10);
+        pahisAse2.Ammo.Value = 100;
+        pahisAse2.ProjectileCollision = PahisAmmusOsui;
+        pahis.Ase = pahisAse2;
+        pahis.Tag = "paha";
+        pahisAse2.AttackSound = null;
+        pahisAse2.Image = kalashnikov;
+        pahis.Add(pahisAse2);
+        AddCollisionHandler(pahis, seinatormays);
+        seuraajaAivot.Active = true;
+        seuraajaAivot.Speed = 500;
+        seuraajaAivot.DistanceClose = 150;
+        seuraajaAivot.DistanceFar = 250;
+        seuraajaAivot.StopWhenTargetClose = true;
+        randomAivot.Speed = 500;
+        LabyrinthWandererBrain labyrinttiAivot = new LabyrinthWandererBrain(ruudunKoko);
+        labyrinttiAivot.Speed = 100.0;
+        labyrinttiAivot.LabyrinthWallTag = "seina";
+        labyrinttiAivot.DirectionChangeTimeout = 1;
+        pahis.Brain = seuraajaAivot;
+        seuraajaAivot.FarBrain = labyrinttiAivot;
+
+        Timer aivoajastin = new Timer();
+        aivoajastin.Interval = 0.1;
+        aivoajastin.Timeout += delegate()
+        {
+            if (pahis.SeesObject(pelaaja1))
+                pahis.Brain = seuraajaAivot;
+            else
+            {
+                aivoajastin.Start();
+            }
+
+        };
+
+        seuraajaAivot.TargetClose += delegate { if (pahis.SeesObject(pelaaja1)) { pahisAmpuu2(pahisAse2, pahis); } else { pahis.Brain = labyrinttiAivot; aivoajastin.Start(); } };
+
+        pahis.CollisionIgnoreGroup = 1;
+
+        Add(pahis);
+    }
+
     void luoPahis(Vector paikka, double leveys, double korkeus)
     {
         Pahis pahis = new Pahis(leveys * 0.6, korkeus * 0.6, veriLantti, mp5);
@@ -473,7 +523,7 @@ public class HotlineVihti : PhysicsGame
 
         AssaultRifle pahisAse = new AssaultRifle(30, 10);
         pahisAse.Ammo.Value = 100;
-        pahisAse.ProjectileCollision = PahisAmmusOsui;
+        pahisAse.ProjectileCollision = PahisAmmusOsui2;
         pahisAse.InfiniteAmmo = true;
         pahis.Ase = pahisAse;
         pahis.Tag = "paha";
@@ -504,7 +554,7 @@ public class HotlineVihti : PhysicsGame
         seuraajaAivot.FarBrain = labyrinttiAivot;
 
         Timer aivoajastin = new Timer();
-        aivoajastin.Interval = 0.5;
+        aivoajastin.Interval = 0.1;
         aivoajastin.Timeout += delegate()
         {
             if (pahis.SeesObject(pelaaja1))
@@ -524,15 +574,38 @@ public class HotlineVihti : PhysicsGame
 
     }
 
-    void updateAi()
-    {
-        
-    }
-
     void seinatormays(PhysicsObject pahis, PhysicsObject kohde)
     {
         //Vector impulssi = new Vector(500.0, 500.0);
         //pahis.Hit(impulssi);
+    }
+
+    void pahisAmpuu2(AssaultRifle ase2, Pahis pahis)
+    {
+        Vector suunta = (pelaaja1.Position - pahis.Position).Normalize();
+
+        if (pelaaja1.Velocity == Vector.Zero)
+        {
+            pahis.Angle = suunta.Angle;
+        }
+        else
+        {
+            pahis.Angle = suunta.Angle * 1.1;
+        }
+
+
+        ase2.AttackSound = aksound;
+        PhysicsObject ammus = ase2.Shoot();
+
+        if (ammus != null)
+        {
+            ase2.Power.DefaultValue = 250;
+            ase2.FireRate = 5;
+            ase2.CanHitOwner = false;
+            ammus.Size *= 0.65;
+            ammus.MaximumLifetime = TimeSpan.FromSeconds(4);
+            ammus.CollisionIgnoreGroup = 1;
+        }
     }
 
     void pahisAmpuu(AssaultRifle ase, Pahis pahis)
@@ -661,11 +734,41 @@ public class HotlineVihti : PhysicsGame
         }
         if (kohde.Tag.Equals("hyva"))
         {
-            (kohde as Hyvis).Ase.Destroy();
-            (kohde as Hyvis).Ase2.Destroy();
-            (kohde as Hyvis).Ase3.Destroy();
-            (kohde as Hyvis).Destroy();
-            pelikaynnissa = false;
+            (kohde as Hyvis).ElamaLaskuri.Value -= 2;
+
+            if (pelaaja1.ElamaLaskuri.Value < 1)
+            {
+                MessageDisplay.Add("RESTART");
+                MessageDisplay.Add("R");
+            }
+
+            GameObject verilantti = new GameObject(30, 30);
+            verilantti.Position = kohde.Position;
+            verilantti.Image = veriLantti;
+            Add(verilantti, -3);
+        }
+    }
+
+    void PahisAmmusOsui2(PhysicsObject ammus, PhysicsObject kohde)
+    {
+        if (kohde.Tag.Equals("hyva") || kohde.Tag.Equals("seina"))
+        {
+            ammus.Destroy();
+        }
+        if (kohde.Tag.Equals("hyva"))
+        {
+            (kohde as Hyvis).ElamaLaskuri.Value -= 3;
+
+            if (pelaaja1.ElamaLaskuri.Value < 1)
+            {
+                MessageDisplay.Add("RESTART");
+                MessageDisplay.Add("R");
+            }
+
+            GameObject verilantti = new GameObject(35, 35);
+            verilantti.Position = kohde.Position;
+            verilantti.Image = veriLantti;
+            Add(verilantti, -3);
         }
     }
 
@@ -680,16 +783,16 @@ public class HotlineVihti : PhysicsGame
 
             //LisaaAseTrigger(kohde.Position, ruudunKoko, ruudunKoko, "ase3", mp5);
 
-            Explosion rajahdys = new Explosion(5000);
-            rajahdys.Image = veriLantti;
-            rajahdys.MaxRadius = 70;
-            rajahdys.Force = 100;
-            rajahdys.Speed = 100;
-            rajahdys.Position = kohde.Position + new Vector(3, 0);
-            rajahdys.ShockwaveColor = new Color(10, 0, 0, 0);
-            Add(rajahdys);
+            //Explosion rajahdys = new Explosion(5000);
+            //rajahdys.Image = veriLantti;
+            //rajahdys.MaxRadius = 70;
+            //rajahdys.Force = 100;
+            //rajahdys.Speed = 100;
+            //rajahdys.Position = kohde.Position + new Vector(3, 0);
+            //rajahdys.ShockwaveColor = new Color(10, 0, 0, 0);
+            //Add(rajahdys);
 
-            GameObject verilantti = new GameObject(30, 30);
+            GameObject verilantti = new GameObject(35, 35);
             verilantti.Position = kohde.Position;
             verilantti.Image = veriLantti;
             Add(verilantti, -3);
