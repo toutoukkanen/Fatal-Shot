@@ -25,12 +25,24 @@ using Jypeli.Widgets;
             }
         }
 
+        private AssaultRifle ase2 = new AssaultRifle(10, 10);
+        public AssaultRifle Ase2
+        {
+            get
+            {
+                return ase2;
+            }
+            set
+            {
+                ase2 = value;
+            }
+        }
+
         public Pahis(double leveys, double korkeus, Image kuva, Image aseenkuva)
             : base(leveys, korkeus)
         {
             elamaLaskuri.LowerLimit += delegate { this.Tapa(kuva, aseenkuva); };
         }
-
 
         public void Tapa(Image kuva, Image aseenkuva)
         {
@@ -46,7 +58,14 @@ using Jypeli.Widgets;
             PhysicsObject asetrigger = PhysicsObject.CreateStaticObject(20, 20);
             asetrigger.CollisionIgnoreGroup = 0;
             asetrigger.IgnoresCollisionResponse = true;
-            asetrigger.Tag = "ase3";
+            if (this.ase.IsAddedToGame)
+            {
+                asetrigger.Tag = "ase3";
+            }
+            if (this.ase2.IsAddedToGame)
+            {
+                asetrigger.Tag = "ase2";
+            }
             asetrigger.Position = this.Position;
             asetrigger.Image = aseenkuva;
             Game.Add(asetrigger,1);

@@ -470,11 +470,12 @@ public class HotlineVihti : PhysicsGame
         randomAivot.ChangeMovementSeconds = 3;
         AssaultRifle pahisAse2 = new AssaultRifle(30, 10);
         pahisAse2.Ammo.Value = 100;
-        pahisAse2.ProjectileCollision = PahisAmmusOsui;
+        pahisAse2.ProjectileCollision = PahisAmmusOsui2;
         pahis.Ase = pahisAse2;
         pahis.Tag = "paha";
         pahisAse2.AttackSound = null;
         pahisAse2.Image = kalashnikov;
+        pahis.Ase2 = pahisAse2;
         pahis.Add(pahisAse2);
         AddCollisionHandler(pahis, seinatormays);
         seuraajaAivot.Active = true;
