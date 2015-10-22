@@ -56,3 +56,5 @@ C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x8
 C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\FatalShot.exe
 C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\obj\x86\Debug\FatalShot.pdb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\rollermobster.xnb
+C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\rollermobster.wma

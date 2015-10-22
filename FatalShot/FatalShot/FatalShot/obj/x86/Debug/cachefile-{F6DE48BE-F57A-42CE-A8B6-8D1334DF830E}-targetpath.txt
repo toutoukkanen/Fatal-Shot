@@ -11,3 +11,5 @@ Content\mp5sound.xnb
 Content\m3sound.xnb
 Content\vaihto.xnb
 Content\m3vaihto.xnb
+Content\rollermobster.xnb
+Content\rollermobster.wma

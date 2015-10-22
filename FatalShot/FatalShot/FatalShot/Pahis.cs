@@ -62,7 +62,7 @@ using Jypeli.Widgets;
             {
                 asetrigger.Tag = "ase3";
             }
-            else if (this.pahisAse2.IsAddedToGame)
+            if (this.pahisAse2.IsAddedToGame)
             {
                 asetrigger.Tag = "ase2";
             }

@@ -71,7 +71,7 @@
       <Processor>TextFileContentProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\kentta.xnb</Output>
-      <Time>2015-06-12T15:50:44.8055588+03:00</Time>
+      <Time>2015-06-17T15:00:27.2518965+03:00</Time>
     </Item>
     <Item>
       <Source>aksound.wav</Source>
@@ -117,6 +117,16 @@
       <Options>None</Options>
       <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\m3vaihto.xnb</Output>
       <Time>2015-06-07T02:44:01.2160587+03:00</Time>
+    </Item>
+    <Item>
+      <Source>rollermobster.mp3</Source>
+      <Name>rollermobster</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\rollermobster.xnb</Output>
+      <Extra>C:\Users\Toukka\Documents\GitHub\Fatal-Shot\FatalShot\FatalShot\FatalShot\bin\x86\Debug\Content\rollermobster.wma</Extra>
+      <Time>2015-06-15T13:17:16.0306945+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

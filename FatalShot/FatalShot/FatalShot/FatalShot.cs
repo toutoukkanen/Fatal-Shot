@@ -14,7 +14,8 @@ public class HotlineVihti : PhysicsGame
     IntMeter haulit;
 
     Timer hauliajastin;
-
+    Timer aseenvaihtotimer;
+    Timer kolliisiotimer;
     //SoundEffect kalashnikovsound = LoadSoundEffect("kalashnikovsound");
 
     SoundEffect aksound = LoadSoundEffect ("aksound");
@@ -23,6 +24,8 @@ public class HotlineVihti : PhysicsGame
     SoundEffect vaihto = LoadSoundEffect ("vaihto");
     SoundEffect m3vaihto = LoadSoundEffect("m3vaihto");
 
+    bool musiikkisoi = false;
+    bool vaihdaasetest = false;
 
     Image pelaajanKuva = LoadImage ("pelaajav1");
     Image poliisiAmpuuKuva = LoadImage ("pelaajav1");
@@ -32,10 +35,13 @@ public class HotlineVihti : PhysicsGame
     Image haulikko = LoadImage ("shotgun");
     Image kalashnikov = LoadImage ("kalashnikov");
     Image veriLantti = LoadImage ("verilantti");
-    Vector nopeusYlos = new Vector(0, 500);
-    Vector nopeusAlas = new Vector(0, -500);
-    Vector nopeusOikea = new Vector(500, 0);
-    Vector nopeusVasen = new Vector(-500, 0);
+    Vector nopeusYlos = new Vector(0, 2600);
+    Vector nopeusAlas = new Vector(0, -2600);
+    Vector nopeusOikea = new Vector(2600, 0);
+    Vector nopeusVasen = new Vector(-2600, 0);
+
+    bool vaihdaase = false;
+
     AssaultRifle pelaajan1Ase;
     AssaultRifle pelaajan1Ase2;
     AssaultRifle pelaajan1Ase3;
@@ -80,6 +86,16 @@ public class HotlineVihti : PhysicsGame
         Mouse.Listen(MouseButton.Left, ButtonState.Released, delegate { Camera.FollowOffset = new Vector(0.0, 0.0); }, "");
         Mouse.Listen(MouseButton.Left, ButtonState.Down, rekyyli, "");
 
+        aseenvaihtotimer = new Timer();
+        aseenvaihtotimer.Interval = 1;
+        aseenvaihtotimer.Timeout += delegate()
+        {
+            vaihdaase = false;
+            //kolliisiotimer.Stop();
+        };
+
+        Mouse.Listen(MouseButton.Right, ButtonState.Down, delegate { vaihdaase = true; aseenvaihtotimer.Start(); }, "");
+
         //Mouse.Listen(MouseButton.Middle, ButtonState.Pressed, VaihdaAse, "Vaihda ase");
         //delegate { { rekyylitimer.Start(); } }
 
@@ -99,7 +115,12 @@ public class HotlineVihti : PhysicsGame
 
         haulit = new IntMeter(56);
 
-
+        if (musiikkisoi == false)
+        {
+        MediaPlayer.Play("rollermobster");
+        MediaPlayer.IsRepeating = true;
+        musiikkisoi = true;
+        }
 
         rekyylitimer.Interval = 0.1;
         rekyylitimer.Timeout += rekyyli; 
@@ -138,7 +159,7 @@ public class HotlineVihti : PhysicsGame
 
     void rekyyli()
     {
-        if (pelaaja1.Ase2.IsAddedToGame && pelaajan1Ase2.Ammo > 1)
+        if (pelaaja1.Ase2.IsAddedToGame && pelaajan1Ase2.Ammo != 0)
         {
             if (rekyyliOn)
             {
@@ -158,12 +179,12 @@ public class HotlineVihti : PhysicsGame
             }
         }
 
-        if (pelaaja1.Ase3.IsAddedToGame && pelaajan1Ase3.Ammo > 1)
+        if (pelaaja1.Ase3.IsAddedToGame && pelaajan1Ase3.Ammo != 0)
         {
             if (rekyyliOn)
             {
                 //Camera.FollowOffset = Vector.FromLengthAndAngle(50.0, -pelaajan1Ase2.Angle);
-                Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(20.0, -pelaajan1Ase2.Angle);
+                Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(20.0, -pelaajan1Ase3.Angle);
                 rekyyliOn = false;
 
                 Timer rekyylivaihtotimer = new Timer();
@@ -171,19 +192,19 @@ public class HotlineVihti : PhysicsGame
                 rekyylivaihtotimer.Timeout += delegate()
                 {
                     //Camera.FollowOffset = Vector.FromLengthAndAngle(25.0, pelaajan1Ase2.Angle);
-                    Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(15.0, pelaajan1Ase2.Angle);
+                    Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(15.0, pelaajan1Ase3.Angle);
                     rekyyliOn = true;
                 };
                 rekyylivaihtotimer.Start(1);
             }
         }
 
-        if (pelaaja1.Ase.IsAddedToGame && haulit.Value > 1)
+        if (pelaaja1.Ase.IsAddedToGame && haulit.Value != 0)
         {
             if (rekyyliOn && haulikkorekyyli)
             {
                 //Camera.FollowOffset = Vector.FromLengthAndAngle(50.0, -pelaajan1Ase2.Angle);
-                Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(60.0, -pelaajan1Ase2.Angle);
+                Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(60.0, -pelaajan1Ase.Angle);
                 rekyyliOn = false;
 
                 Timer rekyylivaihtotimer = new Timer();
@@ -191,7 +212,7 @@ public class HotlineVihti : PhysicsGame
                 rekyylivaihtotimer.Timeout += delegate()
                 {
                     //Camera.FollowOffset = Vector.FromLengthAndAngle(25.0, pelaajan1Ase2.Angle);
-                    Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(25.0, pelaajan1Ase2.Angle);
+                    Camera.Position = pelaaja1.Position + Vector.FromLengthAndAngle(25.0, pelaajan1Ase.Angle);
                     rekyyliOn = true;
                     haulikkorekyyli = false;
                 };
@@ -232,6 +253,7 @@ public class HotlineVihti : PhysicsGame
         ClearAll();
         Begin();
         rekyyliOn = true;
+        vaihdaase = false;
         
         //vaihdettujo = false;
     }
@@ -268,7 +290,7 @@ public class HotlineVihti : PhysicsGame
                 ammus.CollisionIgnoreGroup = 3;
                 ase3.Power.DefaultValue = 300;
                 ase3.FireRate = 10;
-                ammus.Size *= 0.50;
+                ammus.Size *= 0.65;
             }
         }
     }
@@ -277,13 +299,13 @@ public class HotlineVihti : PhysicsGame
 
     void Ammu(AssaultRifle ase)
     {
-        if (haulikkovalmiina && pelikaynnissa && haulit.Value > 7 && pelaajan1Ase.IsAddedToGame)
+        if (haulikkovalmiina && pelikaynnissa && haulit.Value > 5 && pelaajan1Ase.IsAddedToGame)
         {
             m3sound.Play();
             hauliajastin.Start();
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 6; i++)
             {
-                PhysicsObject hauli = new PhysicsObject(2, 2);
+                PhysicsObject hauli = new PhysicsObject(4, 4);
                 hauli.Shape = Shape.Ellipse;
                 hauli.Color = Color.Yellow;
                 hauli.Position = pelaaja1.Position;
@@ -322,7 +344,7 @@ public class HotlineVihti : PhysicsGame
             {
                 ase2.Power.DefaultValue = 300;
                 ase2.FireRate = 7;
-                ammus.Size *= 0.65;
+                ammus.Size *= 0.70;
                 ammus.CollisionIgnoreGroup = 3;
             }
         }
@@ -353,8 +375,8 @@ public class HotlineVihti : PhysicsGame
         pelaajan1Ase2.ProjectileCollision = AmmusOsui;
         pelaajan1Ase2.Image = kalashnikov;
         //pelaaja1.Aseet.Add(pelaajan1Ase2);
-        
-        
+
+        pelaaja1.LinearDamping = 0.85;
 
         pelaajan1Ase = new AssaultRifle(30, 10);
         pelaajan1Ase.ProjectileCollision = AmmusOsui2;
@@ -393,32 +415,36 @@ public class HotlineVihti : PhysicsGame
 
     void ase(PhysicsObject pelaaja1, PhysicsObject ase)
     {
-        pelaaja1.Remove(pelaajan1Ase3);
-        pelaaja1.Remove(pelaajan1Ase2);
+        vaihdaasetest = true;
 
-        pelaaja1.Add(pelaajan1Ase);
+                pelaaja1.Remove(pelaajan1Ase3);
+                pelaaja1.Remove(pelaajan1Ase2);
 
-        haulit.Value = 56;
+                pelaaja1.Add(pelaajan1Ase);
 
-        Mouse.ListenMovement(0.1, Tahtaa, "Tähtää");
+                haulit.Value = 36;
 
-        m3vaihto.Play();
+                Mouse.ListenMovement(0.1, Tahtaa, "Tähtää");
 
-        ase.Destroy();
+                m3vaihto.Play();
 
-        haulikkovalmiina = false;
+                ase.Destroy();
 
-        hauliajastin = new Timer();
-        hauliajastin.Interval = 0.9;
-        hauliajastin.Timeout += delegate()
-        {
-            haulikkovalmiina = true;
-        };
+                haulikkovalmiina = false;
 
+                hauliajastin = new Timer();
+                hauliajastin.Interval = 0.9;
+                hauliajastin.Timeout += delegate()
+                {
+                    haulikkovalmiina = true;
+                    hauliajastin.Stop();
+                };
 
-        hauliajastin.Start();
+                hauliajastin.Start();
 
-        pelikaynnissa = true;
+                pelikaynnissa = true;
+                vaihdaase = false;
+                vaihdaasetest = false;
     }
 
     void ase2(PhysicsObject pelaaja1, PhysicsObject ase2)
@@ -492,7 +518,7 @@ public class HotlineVihti : PhysicsGame
         seuraajaAivot.FarBrain = labyrinttiAivot;
 
         Timer aivoajastin = new Timer();
-        aivoajastin.Interval = 0.1;
+        aivoajastin.Interval = 0.2;
         aivoajastin.Timeout += delegate()
         {
             if (pahis.SeesObject(pelaaja1))
@@ -536,9 +562,9 @@ public class HotlineVihti : PhysicsGame
 
         seuraajaAivot.Active = true;
         seuraajaAivot.Speed = 500;
-        seuraajaAivot.DistanceClose = 200;
-        seuraajaAivot.DistanceFar = 250;
-        seuraajaAivot.StopWhenTargetClose = true;
+        seuraajaAivot.DistanceClose = 500;
+        seuraajaAivot.DistanceFar = 650;
+        
 
         randomAivot.Speed = 500;
 
@@ -555,7 +581,7 @@ public class HotlineVihti : PhysicsGame
         seuraajaAivot.FarBrain = labyrinttiAivot;
 
         Timer aivoajastin = new Timer();
-        aivoajastin.Interval = 0.1;
+        aivoajastin.Interval = 0.2;
         aivoajastin.Timeout += delegate()
         {
             if (pahis.SeesObject(pelaaja1))
@@ -573,12 +599,13 @@ public class HotlineVihti : PhysicsGame
 
         Add(pahis);
 
+        seuraajaAivot.StopWhenTargetClose = true;
     }
 
     void seinatormays(PhysicsObject pahis, PhysicsObject kohde)
     {
-        //Vector impulssi = new Vector(500.0, 500.0);
-        //pahis.Hit(impulssi);
+        Vector impulssi = new Vector(500.0, 500.0);
+        pahis.Hit(impulssi);
     }
 
     void pahisAmpuu2(AssaultRifle ase2, Pahis pahis)
@@ -820,6 +847,6 @@ public class HotlineVihti : PhysicsGame
             pelaaja1.Velocity = Vector.Zero;
             return;
         }
-        pelaaja1.Velocity = nopeus;
+        pelaaja1.Push(nopeus);
     }
 }
